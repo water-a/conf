@@ -96,18 +96,7 @@ class Conf<T extends Record<string, any> = Record<string, unknown>> implements I
 				errorDataPath: 'property'
 			});
 
-			const schema: JSONSchema = {
-				type: 'object',
-				properties: options.schema
-			};
-
-			this.#validator = ajv.compile(schema);
-
-			for (const [key, value] of Object.entries<JSONSchema>(options.schema)) {
-				if (value?.default) {
-					this.#defaultValues[key as keyof T] = value.default;
-				}
-			}
+			this.#validator = ajv.compile(options.schema);
 		}
 
 		if (options.defaults) {
