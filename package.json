@@ -16,7 +16,7 @@
 	},
 	"scripts": {
 		"test": "xo && npm run build && nyc ava",
-		"build": "del-cli dist && tsc",
+		"build": "npm i && del-cli dist && tsc",
 		"prepack": "npm run build"
 	},
 	"files": [
