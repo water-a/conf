@@ -13,7 +13,6 @@ import debounceFn = require('debounce-fn');
 import semver = require('semver');
 import onetime = require('onetime');
 import {Deserialize, Migrations, OnDidChangeCallback, Options, Serialize, Unsubscribe, Schema, OnDidAnyChangeCallback} from './types';
-import {JSONSchema} from 'json-schema-typed';
 
 const encryptionAlgorithm = 'aes-256-cbc';
 
