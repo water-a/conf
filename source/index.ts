@@ -315,7 +315,7 @@ class Conf<T extends Record<string, any> = Record<string, unknown>> implements I
 				return createPlainObject();
 			}
 
-			if (this.#options.renameInvalidConfig && error.name === 'SyntaxError'){
+			if (this.#options.renameInvalidConfig){
 				fs.renameSync(this.path, `${this.#options.configName}.invalid.${this.#options.fileExtension}`);
 
 				return createPlainObject();
