@@ -315,13 +315,13 @@ class Conf<T extends Record<string, any> = Record<string, unknown>> implements I
 				return createPlainObject();
 			}
 
-			if (this.#options.clearInvalidConfig && error.name === 'SyntaxError') {
-				return createPlainObject();
-			}
-
 			if (this.#options.renameInvalidConfig && error.name === 'SyntaxError'){
 				fs.renameSync(this.path, `${this.#options.configName}.invalid.${this.#options.fileExtension}`);
 
+				return createPlainObject();
+			}
+
+			if (this.#options.clearInvalidConfig && error.name === 'SyntaxError') {
 				return createPlainObject();
 			}
 
