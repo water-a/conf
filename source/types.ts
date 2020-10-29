@@ -137,6 +137,8 @@ export interface Options<T> {
 	*/
 	clearInvalidConfig?: boolean;
 
+	renameInvalidConfig?: boolean;
+
 	/**
 	Function to serialize the config object to a UTF-8 string when writing the config file.
 
